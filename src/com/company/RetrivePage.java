@@ -1,13 +1,12 @@
 package com.company;
 
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.HttpStatus;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.PostMethod;
 
-
-
-
-
-
-import sun.net.www.http.HttpClient;
-
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -21,11 +20,10 @@ public class RetrivePage {
     private static HttpClient httpClient = new HttpClient();
 
     // 设置代理服务器
-    static {
-// 设置代理服务器的 IP 地址和端口
-        httpClient.getHostConfiguration().setProxy("172.17.18.84", 8080);
-        httpClient.
-    }
+//    static {
+//// 设置代理服务器的 IP 地址和端口
+//        httpClient.getHostConfiguration().setProxy("172.17.18.84", 8080);
+//    }
 
     public static boolean downloadPage(String path) throws HttpException,
             IOException {
@@ -35,9 +33,8 @@ public class RetrivePage {
         PostMethod postMethod = new PostMethod(path);
 // 设置 post 方法的参数
         NameValuePair[] postData = new NameValuePair[2];
-        postData[0] = new
-                NameValuePair("name", "lietu");
-        postData[1] = newNameValuePair("password", "*****");
+        postData[0] = new NameValuePair("name", "lietu");
+        postData[1] = new NameValuePair("password","*****");
         postMethod.addParameters(postData);
 // 执行，返回状态码
         int statusCode = httpClient.executeMethod(postMethod);
@@ -45,7 +42,8 @@ public class RetrivePage {
         if (statusCode == HttpStatus.SC_OK) {
             input = postMethod.getResponseBodyAsStream();
 // 得到文件名
-            String filename = path.substring(path.lastIndexOf('/') + 1);
+//            String filename = path.substring(path.lastIndexOf('/') + 1);
+            String filename ="test2.html";
 // 获得文件输出流
             output = new FileOutputStream(filename);
 // 输出到文件
