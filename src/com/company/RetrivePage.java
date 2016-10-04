@@ -1,10 +1,21 @@
 package com.company;
 
+
+
+
+
+
+
+import sun.net.www.http.HttpClient;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 /**
- * Created by Administrator on 2016/10/4.
+ * Created by yechang on 2016/10/4.
  */
-public class j1 {
-}
+
 
 public class RetrivePage {
     private static HttpClient httpClient = new HttpClient();
@@ -13,6 +24,7 @@ public class RetrivePage {
     static {
 // 设置代理服务器的 IP 地址和端口
         httpClient.getHostConfiguration().setProxy("172.17.18.84", 8080);
+        httpClient.
     }
 
     public static boolean downloadPage(String path) throws HttpException,
