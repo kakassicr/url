@@ -19,9 +19,9 @@ import java.io.OutputStream;
 public class RetrivePage {
     private static HttpClient httpClient = new HttpClient();
 
-    // ÉèÖÃ´úÀí·şÎñÆ÷
+    // è®¾ç½®ä»£ç†æœåŠ¡å™¨
 //    static {
-//// ÉèÖÃ´úÀí·şÎñÆ÷µÄ IP µØÖ·ºÍ¶Ë¿Ú
+//// è®¾ç½®ä»£ç†æœåŠ¡å™¨çš„ IP åœ°å€å’Œç«¯å£
 //        httpClient.getHostConfiguration().setProxy("172.17.18.84", 8080);
 //    }
 
@@ -29,29 +29,29 @@ public class RetrivePage {
             IOException {
         InputStream input = null;
         OutputStream output = null;
-// µÃµ½ post ·½·¨
+// å¾—åˆ° post æ–¹æ³•
         PostMethod postMethod = new PostMethod(path);
-// ÉèÖÃ post ·½·¨µÄ²ÎÊı
+// è®¾ç½® post æ–¹æ³•çš„å‚æ•°
         NameValuePair[] postData = new NameValuePair[2];
         postData[0] = new NameValuePair("name", "lietu");
         postData[1] = new NameValuePair("password","*****");
         postMethod.addParameters(postData);
-// Ö´ĞĞ£¬·µ»Ø×´Ì¬Âë
+// æ‰§è¡Œï¼Œè¿”å›çŠ¶æ€ç 
         int statusCode = httpClient.executeMethod(postMethod);
-// Õë¶Ô×´Ì¬Âë½øĞĞ´¦Àí ( ¼òµ¥Æğ¼û£¬Ö»´¦Àí·µ»ØÖµÎª 200 µÄ×´Ì¬Âë )
+// é’ˆå¯¹çŠ¶æ€ç è¿›è¡Œå¤„ç† ( ç®€å•èµ·è§ï¼Œåªå¤„ç†è¿”å›å€¼ä¸º 200 çš„çŠ¶æ€ç  )
         if (statusCode == HttpStatus.SC_OK) {
             input = postMethod.getResponseBodyAsStream();
-// µÃµ½ÎÄ¼şÃû
+// å¾—åˆ°æ–‡ä»¶å
 //            String filename = path.substring(path.lastIndexOf('/') + 1);
             String filename ="test2.html";
-// »ñµÃÎÄ¼şÊä³öÁ÷
+// è·å¾—æ–‡ä»¶è¾“å‡ºæµ
             output = new FileOutputStream(filename);
-// Êä³öµ½ÎÄ¼ş
+// è¾“å‡ºåˆ°æ–‡ä»¶
             int tempByte = -1;
             while ((tempByte = input.read()) > 0) {
                 output.write(tempByte);
             }
-// ¹Ø±ÕÊäÈëÊä³öÁ÷
+// å…³é—­è¾“å…¥è¾“å‡ºæµ
             if (input != null) {
                 input.close();
             }
@@ -64,10 +64,10 @@ public class RetrivePage {
     }
 
     /**
-     * ²âÊÔ´úÂë
+     * æµ‹è¯•ä»£ç 
      */
     public static void main(String[] args) {
-// ×¥È¡ lietu Ê×Ò³ £¬ Êä³ö
+// æŠ“å– lietu é¦–é¡µ ï¼Œ è¾“å‡º
         try {
             RetrivePage.downloadPage("http://www.lietu.com/");
         } catch (HttpException e) {
