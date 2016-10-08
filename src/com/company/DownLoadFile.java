@@ -87,7 +87,7 @@ public class DownLoadFile {
         } catch (IOException e) {
 // 发生网络异常
             e.printStackTrace();
-        } finally {  
+        } finally {
 // 释放连接
             getMethod.releaseConnection();
         }
