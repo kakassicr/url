@@ -5,12 +5,11 @@ package com.company;
  */
 
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 
 /**
  * ���У����潫Ҫ���ʵ� URL
  */
-public class Queue extends PriorityQueue {
+public class Queue2 {
     // ʹ������ʵ�ֶ���
     private LinkedList queue = new LinkedList();
 

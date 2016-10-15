@@ -2,6 +2,11 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/com/company/DownLoadFile.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/HtmlParserTool.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LinkFilter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/LinkQueue.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/company/MyCrawler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/RetrivePage.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -71,10 +71,8 @@ public class RetrivePage {
         try {
             RetrivePage.downloadPage("http://www.lietu.com/");
         } catch (HttpException e) {
-// TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
-// TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
