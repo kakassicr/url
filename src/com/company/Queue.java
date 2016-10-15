@@ -5,31 +5,30 @@ package com.company;
  */
 
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 
 /**
- * ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½æ½«Òªï¿½ï¿½ï¿½Êµï¿½ URL
+ * ¶ÓÁÐ£¬±£´æ½«Òª·ÃÎÊµÄ URL
  */
-public class Queue extends PriorityQueue {
-    // Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½Ö¶ï¿½ï¿½ï¿½
+public class Queue {
+    // Ê¹ÓÃÁ´±íÊµÏÖ¶ÓÁÐ
     private LinkedList queue = new LinkedList();
 
-    // ï¿½ï¿½ï¿½ï¿½ï¿½
+    // Èë¶ÓÁÐ
     public void enQueue(Object t) {
         queue.addLast(t);
     }
 
-    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    // ³ö¶ÓÁÐ
     public Object deQueue() {
         return queue.removeFirst();
     }
 
-    // ï¿½Ð¶Ï¶ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Îªï¿½ï¿½
+    // ÅÐ¶Ï¶ÓÁÐÊÇ·ñÎª¿Õ
     public boolean isQueueEmpty() {
         return queue.isEmpty();
     }
 
-    // ï¿½Ð¶Ï¶ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ t
+    // ÅÐ¶Ï¶ÓÁÐÊÇ·ñ°üº¬ t
     public boolean contians(Object t) {
         return queue.contains(t);
     }
