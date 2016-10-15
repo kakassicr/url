@@ -26,7 +26,7 @@ public class MyCrawler {
         LinkFilter filter = new LinkFilter(){
             public boolean accept(String url) {
 //                if(url.startsWith("http://house.fdc.com.cn/"))
-                if(url.contains("house.fdc.com.cn"))
+                if(url.contains("wh.fdc.com.cn"))
                     return true;
                 else
                     return false;
@@ -36,7 +36,7 @@ public class MyCrawler {
         initCrawlerWithSeeds(seeds);
 // 循环条件：待抓取的链接不空且抓取的网页不多于 1000
         while(!LinkQueue.unVisitedUrlsEmpty()
-                &&LinkQueue.getVisitedUrlNum()<=1000)
+                &&LinkQueue.getVisitedUrlNum()<=50)
         {
 // 队头 URL 出队列
             String visitUrl=(String)LinkQueue.unVisitedUrlDeQueue();
@@ -61,6 +61,6 @@ public class MyCrawler {
     {
         MyCrawler crawler = new MyCrawler();
 //        crawler.crawling(new String[]{"http://www.lietu.com"});
-        crawler.crawling(new String[]{"http://house.fdc.com.cn/houselist.html"});
+        crawler.crawling(new String[]{"http://house.wh.fdc.com.cn/"});
     }
 }

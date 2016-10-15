@@ -7,28 +7,28 @@ package com.company;
 import java.util.LinkedList;
 
 /**
- * ¶ÓÁĞ£¬±£´æ½«Òª·ÃÎÊµÄ URL
+ * é˜Ÿåˆ—ï¼Œä¿å­˜å°†è¦è®¿é—®çš„ URL
  */
 public class Queue {
-    // Ê¹ÓÃÁ´±íÊµÏÖ¶ÓÁĞ
+    // ä½¿ç”¨é“¾è¡¨å®ç°é˜Ÿåˆ—
     private LinkedList queue = new LinkedList();
 
-    // Èë¶ÓÁĞ
+    // å…¥é˜Ÿåˆ—
     public void enQueue(Object t) {
         queue.addLast(t);
     }
 
-    // ³ö¶ÓÁĞ
+    // å‡ºé˜Ÿåˆ—
     public Object deQueue() {
         return queue.removeFirst();
     }
 
-    // ÅĞ¶Ï¶ÓÁĞÊÇ·ñÎª¿Õ
+    // åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦ä¸ºç©º
     public boolean isQueueEmpty() {
         return queue.isEmpty();
     }
 
-    // ÅĞ¶Ï¶ÓÁĞÊÇ·ñ°üº¬ t
+    // åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦åŒ…å« t
     public boolean contians(Object t) {
         return queue.contains(t);
     }
